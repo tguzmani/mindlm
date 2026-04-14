@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { CommonModule } from '../common/common.module';
 import { EntriesService } from './entries.service';
 import { EntriesController } from './entries.controller';
-import { ChunkingService } from './chunking.service';
+import { ChunkingService } from './entries-chunking.service';
 
 @Module({
   imports: [CommonModule],

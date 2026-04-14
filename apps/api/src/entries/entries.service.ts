@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { EmbeddingsService } from '../common/openrouter/embeddings.service';
-import { ChunkingService } from './chunking.service';
+import { ChunkingService } from './entries-chunking.service';
 import { CreateEntryDto } from './dto/create-entry.dto';
 import { UpdateEntryDto } from './dto/update-entry.dto';
 

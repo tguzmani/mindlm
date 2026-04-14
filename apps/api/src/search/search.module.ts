@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
+import { CommonModule } from '../common/common.module';
 import { SearchService } from './search.service';
-import { SearchController } from './search.controller';
 
 @Module({
-  controllers: [SearchController],
+  imports: [CommonModule],
   providers: [SearchService],
+  exports: [SearchService],
 })
 export class SearchModule {}
