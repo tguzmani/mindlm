@@ -1,0 +1,512 @@
+{
+  "version": "6.0",
+  "nxVersion": "22.6.5",
+  "pathMappings": {},
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/js/typescript",
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        },
+        "build": {
+          "targetName": "build",
+          "configName": "tsconfig.lib.json",
+          "buildDepsName": "build-deps",
+          "watchDepsName": "watch-deps"
+        }
+      }
+    },
+    {
+      "name": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps",
+        "serveStaticTargetName": "serve-static"
+      }
+    }
+  ],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".agents/skills/link-workspace-packages/SKILL.md",
+        "hash": "6638592300654417978"
+      },
+      {
+        "file": ".agents/skills/monitor-ci/SKILL.md",
+        "hash": "237739416750319315"
+      },
+      {
+        "file": ".agents/skills/monitor-ci/references/fix-flows.md",
+        "hash": "14499115380699629375"
+      },
+      {
+        "file": ".agents/skills/monitor-ci/scripts/ci-poll-decide.mjs",
+        "hash": "8235481637071944834"
+      },
+      {
+        "file": ".agents/skills/monitor-ci/scripts/ci-state-update.mjs",
+        "hash": "13401974159889364904"
+      },
+      {
+        "file": ".agents/skills/nx-generate/SKILL.md",
+        "hash": "16801959272346088877"
+      },
+      {
+        "file": ".agents/skills/nx-import/SKILL.md",
+        "hash": "9709061508228126022"
+      },
+      {
+        "file": ".agents/skills/nx-import/references/ESLINT.md",
+        "hash": "3100736771536685484"
+      },
+      {
+        "file": ".agents/skills/nx-import/references/GRADLE.md",
+        "hash": "15868511153961490698"
+      },
+      {
+        "file": ".agents/skills/nx-import/references/JEST.md",
+        "hash": "8022966628634571060"
+      },
+      {
+        "file": ".agents/skills/nx-import/references/NEXT.md",
+        "hash": "8705422121624482541"
+      },
+      {
+        "file": ".agents/skills/nx-import/references/TURBOREPO.md",
+        "hash": "6654032474246573297"
+      },
+      {
+        "file": ".agents/skills/nx-import/references/VITE.md",
+        "hash": "5793928500507593678"
+      },
+      {
+        "file": ".agents/skills/nx-plugins/SKILL.md",
+        "hash": "4717624081372438208"
+      },
+      {
+        "file": ".agents/skills/nx-run-tasks/SKILL.md",
+        "hash": "10723914446406921246"
+      },
+      {
+        "file": ".agents/skills/nx-workspace/SKILL.md",
+        "hash": "56694506768298655"
+      },
+      {
+        "file": ".agents/skills/nx-workspace/references/AFFECTED.md",
+        "hash": "10577828056523124002"
+      },
+      {
+        "file": ".codex/config.toml",
+        "hash": "834784286173436075"
+      },
+      {
+        "file": ".cursor/agents/ci-monitor-subagent.md",
+        "hash": "14869577228457002810"
+      },
+      {
+        "file": ".cursor/commands/monitor-ci.md",
+        "hash": "9694566310897122482"
+      },
+      {
+        "file": ".cursor/skills/link-workspace-packages/SKILL.md",
+        "hash": "6638592300654417978"
+      },
+      {
+        "file": ".cursor/skills/monitor-ci/SKILL.md",
+        "hash": "2234589037131029925"
+      },
+      {
+        "file": ".cursor/skills/nx-generate/SKILL.md",
+        "hash": "16801959272346088877"
+      },
+      {
+        "file": ".cursor/skills/nx-plugins/SKILL.md",
+        "hash": "4717624081372438208"
+      },
+      {
+        "file": ".cursor/skills/nx-run-tasks/SKILL.md",
+        "hash": "10723914446406921246"
+      },
+      {
+        "file": ".cursor/skills/nx-workspace/SKILL.md",
+        "hash": "14445122489349943565"
+      },
+      {
+        "file": ".cursor/skills/nx-workspace/references/AFFECTED.md",
+        "hash": "10577828056523124002"
+      },
+      {
+        "file": ".gemini/commands/monitor-ci.toml",
+        "hash": "8996250189130521286"
+      },
+      {
+        "file": ".gemini/settings.json",
+        "hash": "14337936512237811016"
+      },
+      {
+        "file": ".gemini/skills/link-workspace-packages/skill.md",
+        "hash": "6638592300654417978"
+      },
+      {
+        "file": ".gemini/skills/monitor-ci/skill.md",
+        "hash": "2234589037131029925"
+      },
+      {
+        "file": ".gemini/skills/nx-generate/skill.md",
+        "hash": "16801959272346088877"
+      },
+      {
+        "file": ".gemini/skills/nx-plugins/skill.md",
+        "hash": "4717624081372438208"
+      },
+      {
+        "file": ".gemini/skills/nx-run-tasks/skill.md",
+        "hash": "10723914446406921246"
+      },
+      {
+        "file": ".gemini/skills/nx-workspace/references/AFFECTED.md",
+        "hash": "10577828056523124002"
+      },
+      {
+        "file": ".gemini/skills/nx-workspace/skill.md",
+        "hash": "14445122489349943565"
+      },
+      {
+        "file": ".github/agents/ci-monitor-subagent.agent.md",
+        "hash": "6573591679819005545"
+      },
+      {
+        "file": ".github/prompts/monitor-ci.prompt.md",
+        "hash": "6387830862800418202"
+      },
+      {
+        "file": ".github/skills/link-workspace-packages/SKILL.md",
+        "hash": "6638592300654417978"
+      },
+      {
+        "file": ".github/skills/monitor-ci/SKILL.md",
+        "hash": "237739416750319315"
+      },
+      {
+        "file": ".github/skills/monitor-ci/references/fix-flows.md",
+        "hash": "14499115380699629375"
+      },
+      {
+        "file": ".github/skills/monitor-ci/scripts/ci-poll-decide.mjs",
+        "hash": "8235481637071944834"
+      },
+      {
+        "file": ".github/skills/monitor-ci/scripts/ci-state-update.mjs",
+        "hash": "13401974159889364904"
+      },
+      {
+        "file": ".github/skills/nx-generate/SKILL.md",
+        "hash": "16801959272346088877"
+      },
+      {
+        "file": ".github/skills/nx-import/SKILL.md",
+        "hash": "9709061508228126022"
+      },
+      {
+        "file": ".github/skills/nx-import/references/ESLINT.md",
+        "hash": "3100736771536685484"
+      },
+      {
+        "file": ".github/skills/nx-import/references/GRADLE.md",
+        "hash": "15868511153961490698"
+      },
+      {
+        "file": ".github/skills/nx-import/references/JEST.md",
+        "hash": "8022966628634571060"
+      },
+      {
+        "file": ".github/skills/nx-import/references/NEXT.md",
+        "hash": "8705422121624482541"
+      },
+      {
+        "file": ".github/skills/nx-import/references/TURBOREPO.md",
+        "hash": "6654032474246573297"
+      },
+      {
+        "file": ".github/skills/nx-import/references/VITE.md",
+        "hash": "5793928500507593678"
+      },
+      {
+        "file": ".github/skills/nx-plugins/SKILL.md",
+        "hash": "4717624081372438208"
+      },
+      {
+        "file": ".github/skills/nx-run-tasks/SKILL.md",
+        "hash": "10723914446406921246"
+      },
+      {
+        "file": ".github/skills/nx-workspace/SKILL.md",
+        "hash": "56694506768298655"
+      },
+      {
+        "file": ".github/skills/nx-workspace/references/AFFECTED.md",
+        "hash": "10577828056523124002"
+      },
+      {
+        "file": ".github/workflows/ci.yml",
+        "hash": "13310162846883450580"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "13946501314844917851"
+      },
+      {
+        "file": ".opencode/agents/ci-monitor-subagent.md",
+        "hash": "6611362967399008889"
+      },
+      {
+        "file": ".opencode/commands/monitor-ci.md",
+        "hash": "6096586976611291749"
+      },
+      {
+        "file": ".opencode/skills/link-workspace-packages/SKILL.md",
+        "hash": "6638592300654417978"
+      },
+      {
+        "file": ".opencode/skills/monitor-ci/SKILL.md",
+        "hash": "237739416750319315"
+      },
+      {
+        "file": ".opencode/skills/monitor-ci/references/fix-flows.md",
+        "hash": "14499115380699629375"
+      },
+      {
+        "file": ".opencode/skills/monitor-ci/scripts/ci-poll-decide.mjs",
+        "hash": "8235481637071944834"
+      },
+      {
+        "file": ".opencode/skills/monitor-ci/scripts/ci-state-update.mjs",
+        "hash": "13401974159889364904"
+      },
+      {
+        "file": ".opencode/skills/nx-generate/SKILL.md",
+        "hash": "16801959272346088877"
+      },
+      {
+        "file": ".opencode/skills/nx-import/SKILL.md",
+        "hash": "9709061508228126022"
+      },
+      {
+        "file": ".opencode/skills/nx-import/references/ESLINT.md",
+        "hash": "3100736771536685484"
+      },
+      {
+        "file": ".opencode/skills/nx-import/references/GRADLE.md",
+        "hash": "15868511153961490698"
+      },
+      {
+        "file": ".opencode/skills/nx-import/references/JEST.md",
+        "hash": "8022966628634571060"
+      },
+      {
+        "file": ".opencode/skills/nx-import/references/NEXT.md",
+        "hash": "8705422121624482541"
+      },
+      {
+        "file": ".opencode/skills/nx-import/references/TURBOREPO.md",
+        "hash": "6654032474246573297"
+      },
+      {
+        "file": ".opencode/skills/nx-import/references/VITE.md",
+        "hash": "5793928500507593678"
+      },
+      {
+        "file": ".opencode/skills/nx-plugins/SKILL.md",
+        "hash": "4717624081372438208"
+      },
+      {
+        "file": ".opencode/skills/nx-run-tasks/SKILL.md",
+        "hash": "10723914446406921246"
+      },
+      {
+        "file": ".opencode/skills/nx-workspace/SKILL.md",
+        "hash": "56694506768298655"
+      },
+      {
+        "file": ".opencode/skills/nx-workspace/references/AFFECTED.md",
+        "hash": "10577828056523124002"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "14688272390704683536"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "4134969992917317260"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "6232135876964617686"
+      },
+      {
+        "file": "AGENTS.md",
+        "hash": "18234343250335250711"
+      },
+      {
+        "file": "CLAUDE.md",
+        "hash": "508528180864369169"
+      },
+      {
+        "file": "README.md",
+        "hash": "6853135453818599305"
+      },
+      {
+        "file": "nx.json",
+        "hash": "4890651005047368192"
+      },
+      {
+        "file": "opencode.json",
+        "hash": "8969569099983068167"
+      },
+      {
+        "file": "package.json",
+        "hash": "7780927245927405889"
+      },
+      {
+        "file": "packages/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "8061331123337694981"
+      },
+      {
+        "file": "pnpm-workspace.yaml",
+        "hash": "2373171212127886927"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "501499671418974141"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "7480320933674468071"
+      }
+    ],
+    "projectFileMap": {
+      "@mindlm/api": [
+        {
+          "file": "apps/api/package.json",
+          "hash": "4624955705535063576",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@nestjs/platform-express",
+            "npm:reflect-metadata",
+            "npm:rxjs",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "apps/api/src/app/app.controller.ts",
+          "hash": "15276891910009544695",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/app/app.module.ts",
+          "hash": "11673476679848632172",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/app/app.service.ts",
+          "hash": "9967902337593410053",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/api/src/main.ts",
+          "hash": "14244403322143362372",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core"
+          ]
+        },
+        {
+          "file": "apps/api/tsconfig.app.json",
+          "hash": "1421362308817364721"
+        },
+        {
+          "file": "apps/api/tsconfig.json",
+          "hash": "6240538891403235665"
+        },
+        {
+          "file": "apps/api/webpack.config.js",
+          "hash": "1138914127741561495",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
+        }
+      ],
+      "@mindlm/api-e2e": [
+        {
+          "file": "apps/api-e2e/.spec.swcrc",
+          "hash": "18201067170784284381"
+        },
+        {
+          "file": "apps/api-e2e/jest.config.cts",
+          "hash": "16229508411263369346"
+        },
+        {
+          "file": "apps/api-e2e/package.json",
+          "hash": "2603976235148574479"
+        },
+        {
+          "file": "apps/api-e2e/src/api/api.spec.ts",
+          "hash": "110394728024017389",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/api-e2e/src/support/global-setup.ts",
+          "hash": "10817858795115919263",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/api-e2e/src/support/global-teardown.ts",
+          "hash": "14210317125869451873",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/api-e2e/src/support/test-setup.ts",
+          "hash": "15521797170623961900",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/api-e2e/tsconfig.json",
+          "hash": "15369347320841676909"
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "3267511051465293170"
+}

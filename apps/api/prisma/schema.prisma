@@ -1,0 +1,98 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  name          String
+  avatarUrl     String?
+  googleId      String         @unique
+  role          UserRole       @default(user)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  collections   Collection[]
+  entries       Entry[]
+  conversations Conversation[]
+}
+
+model Collection {
+  id          String    @id @default(uuid())
+  name        String
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  entries     Entry[]
+}
+
+model Entry {
+  id           String       @id @default(uuid())
+  title        String
+  content      String
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  userId       String
+  user         User         @relation(fields: [userId], references: [id])
+  collectionId String?
+  collection   Collection?  @relation(fields: [collectionId], references: [id])
+  chunks       EntryChunk[]
+}
+
+model EntryChunk {
+  id         String                      @id @default(uuid())
+  content    String
+  chunkIndex Int
+  embedding  Unsupported("vector(1536)")?
+  createdAt  DateTime                    @default(now())
+
+  entryId    String
+  entry      Entry  @relation(fields: [entryId], references: [id], onDelete: Cascade)
+}
+
+model Conversation {
+  id        String    @id @default(uuid())
+  title     String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+  messages  Message[]
+}
+
+model Message {
+  id             String       @id @default(uuid())
+  role           MessageRole
+  content        String
+  createdAt      DateTime     @default(now())
+
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+}
+
+enum MessageRole {
+  user
+  assistant
+}
+
+enum UserRole {
+  admin
+  user
+}
+
+model AppConfig {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt
+}
