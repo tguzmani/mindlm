@@ -1,9 +1,11 @@
 import './global.css';
 import { Lora, Geist } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
+import { QueryProvider } from '@/providers/query-provider';
+import { AppLayout } from '@/components/layout/AppLayout';
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const lora = Lora({
   subsets: ['latin'],
@@ -12,7 +14,7 @@ const lora = Lora({
 });
 
 export const metadata = {
-  title: 'MindLM',
+  title: 'LuminaLM',
   description: 'Personal journal with AI',
 };
 
@@ -22,10 +24,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable, lora.variable)} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={cn('font-sans', geist.variable, lora.variable)}
+      suppressHydrationWarning
+    >
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <QueryProvider>
+            <AppLayout>{children}</AppLayout>
+          </QueryProvider>
         </ThemeProvider>
       </body>
     </html>

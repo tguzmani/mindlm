@@ -1,5 +1,5 @@
 {
-  "name": "@mindlm/api",
+  "name": "@luminalm/api",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -63,15 +63,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@mindlm/api:build",
+          "buildTarget": "@luminalm/api:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@mindlm/api:build:development"
+            "buildTarget": "@luminalm/api:build:development"
           },
           "production": {
-            "buildTarget": "@mindlm/api:build:production"
+            "buildTarget": "@luminalm/api:build:production"
           }
         }
       }
@@ -84,11 +84,15 @@
     "@nestjs/jwt": "^11.0.2",
     "@nestjs/passport": "^11.0.5",
     "@nestjs/platform-express": "^11.0.0",
-    "@prisma/client": "^6.19.3",
+    "@prisma/adapter-pg": "^7.7.0",
+    "@prisma/client": "^7.7.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.1",
-    "prisma": "^6.19.3",
+    "pg": "^8.20.0",
+    "prisma": "^7.7.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
     "tslib": "^2.3.0"
@@ -98,6 +102,7 @@
     "@types/express": "^5.0.6",
     "@types/passport-google-oauth20": "^2.0.17",
     "@types/passport-jwt": "^4.0.1",
+    "@types/pg": "^8.20.0",
     "ts-node": "^10.9.2"
   },
   "prisma": {

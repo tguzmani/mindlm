@@ -1,2 +1,2 @@
-# mindlm
+# luminalm
 AI Augmented Journal

@@ -1,6 +1,6 @@
-# MindLM — CLAUDE.md
+# LuminaLM — CLAUDE.md
 
-## What is MindLM?
+## What is LuminaLM?
 
 A personal journal app with AI. Users write markdown entries and can chat with their own content via RAG (Retrieval-Augmented Generation). The LLM answers questions grounded in the user's own journal entries.
 
@@ -13,6 +13,16 @@ apps/
   api/        ← NestJS backend
   web/        ← Next.js frontend
 libs/         ← shared types, DTOs (if needed)
+```
+
+---
+
+## Dev Commands
+
+```bash
+pnpm dev          # runs both api + web in parallel
+pnpm dev:api      # api only (NestJS on :3000)
+pnpm dev:web      # web only (Next.js on :4200)
 ```
 
 ---
@@ -51,6 +61,13 @@ src/
 ---
 
 ## Database — Supabase + Prisma + pgvector
+
+### CRITICAL — Read before touching Prisma
+
+- **Prisma version must be >= 7.7.0.** Do NOT install older versions (5.x, 6.x, 7.0–7.6). They have incompatible APIs. See `docs/prisma-setup.md` for details.
+- **DATABASE_URL must use Supabase's Session Pooler (port 5432).** Not the Transaction Pooler (6543), not the direct connection. Wrong pooler = cryptic failures.
+- **All Prisma commands run from `apps/api/` with `--config prisma/prisma.config.ts`.**
+- **`prisma migrate dev` will fail on Supabase** due to shadow DB drift from Supabase's default extensions. Use `prisma migrate diff` + `prisma migrate deploy` instead. See `docs/prisma-setup.md`.
 
 ### Setup
 
@@ -389,7 +406,7 @@ accent-hover: #8FA082   (light sage)
 - **Scope:** one global conversation per user — no conversation list, no history browser
 - **Panel width:** ~400px on desktop, full width on mobile
 - **UI structure:**
-  - Header: "MindLM" title + close button
+  - Header: "LuminaLM" title + close button
   - Messages area: scrollable, user messages right-aligned, assistant messages left-aligned
   - Streaming: assistant response appears token by token as it arrives via SSE
   - Input: textarea at the bottom + send button

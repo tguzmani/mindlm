@@ -4,9 +4,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug @mindlm/api with Nx",
+      "name": "Debug @luminalm/api with Nx",
       "runtimeExecutable": "pnpm exec",
-      "runtimeArgs": ["nx", "serve", "@mindlm/api"],
+      "runtimeArgs": ["nx", "serve", "@luminalm/api"],
       "env": {
         "NODE_OPTIONS": "--inspect=9229"
       },

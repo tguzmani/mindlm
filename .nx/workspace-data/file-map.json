@@ -27,6 +27,23 @@
         "watchDepsTargetName": "watch-deps",
         "serveStaticTargetName": "serve-static"
       }
+    },
+    {
+      "name": "@nx/next/plugin",
+      "options": {
+        "startTargetName": "start",
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "serveStaticTargetName": "serve-static",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "name": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
     }
   ],
   "fileMap": {
@@ -257,7 +274,7 @@
       },
       {
         "file": ".gitignore",
-        "hash": "13946501314844917851"
+        "hash": "8020661909251127965"
       },
       {
         "file": ".opencode/agents/ci-monitor-subagent.md",
@@ -345,11 +362,11 @@
       },
       {
         "file": ".vscode/extensions.json",
-        "hash": "4134969992917317260"
+        "hash": "16362845859510497250"
       },
       {
         "file": ".vscode/launch.json",
-        "hash": "6232135876964617686"
+        "hash": "9037394466488845467"
       },
       {
         "file": "AGENTS.md",
@@ -357,15 +374,19 @@
       },
       {
         "file": "CLAUDE.md",
-        "hash": "508528180864369169"
+        "hash": "5813135826006244294"
       },
       {
         "file": "README.md",
-        "hash": "6853135453818599305"
+        "hash": "13233422911053687504"
+      },
+      {
+        "file": "docs/prisma-setup.md",
+        "hash": "10727248363956879007"
       },
       {
         "file": "nx.json",
-        "hash": "4890651005047368192"
+        "hash": "877346404910030522"
       },
       {
         "file": "opencode.json",
@@ -373,7 +394,7 @@
       },
       {
         "file": "package.json",
-        "hash": "7780927245927405889"
+        "hash": "18216912207382259436"
       },
       {
         "file": "packages/.gitkeep",
@@ -381,7 +402,7 @@
       },
       {
         "file": "pnpm-lock.yaml",
-        "hash": "8061331123337694981"
+        "hash": "911777098707774950"
       },
       {
         "file": "pnpm-workspace.yaml",
@@ -393,85 +414,308 @@
       },
       {
         "file": "tsconfig.json",
-        "hash": "7480320933674468071"
+        "hash": "16599301288067750391"
       }
     ],
     "projectFileMap": {
-      "@mindlm/api": [
+      "@luminalm/web": [
         {
-          "file": "apps/api/package.json",
-          "hash": "4624955705535063576",
+          "file": "apps/web/.swcrc",
+          "hash": "4532740859193830353"
+        },
+        {
+          "file": "apps/web/components.json",
+          "hash": "15923953798925169580"
+        },
+        {
+          "file": "apps/web/index.d.ts",
+          "hash": "5498222895072842432"
+        },
+        {
+          "file": "apps/web/next-env.d.ts",
+          "hash": "373744204795424001"
+        },
+        {
+          "file": "apps/web/next.config.js",
+          "hash": "5443563404894739361",
           "deps": [
-            "npm:@nestjs/testing",
-            "npm:@nestjs/common",
-            "npm:@nestjs/core",
-            "npm:@nestjs/platform-express",
-            "npm:reflect-metadata",
-            "npm:rxjs",
-            "npm:tslib"
+            "npm:@nx/next"
           ]
         },
         {
-          "file": "apps/api/src/app/app.controller.ts",
-          "hash": "15276891910009544695",
+          "file": "apps/web/package.json",
+          "hash": "7485954409571275171",
           "deps": [
-            "npm:@nestjs/common"
+            "npm:@base-ui/react",
+            "npm:@tailwindcss/postcss",
+            "npm:@tailwindcss/typography",
+            "npm:@tanstack/react-query",
+            "npm:@tanstack/react-query-devtools",
+            "npm:@uiw/react-md-editor",
+            "npm:class-variance-authority",
+            "npm:clsx",
+            "npm:lucide-react",
+            "npm:next",
+            "npm:next-themes",
+            "npm:postcss@8.5.9",
+            "npm:react",
+            "npm:react-dom",
+            "npm:react-markdown",
+            "npm:shadcn",
+            "npm:tailwind-merge",
+            "npm:tailwindcss",
+            "npm:tw-animate-css",
+            "npm:zustand"
           ]
         },
         {
-          "file": "apps/api/src/app/app.module.ts",
-          "hash": "11673476679848632172",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
+          "file": "apps/web/postcss.config.js",
+          "hash": "1946075535965830873"
         },
         {
-          "file": "apps/api/src/app/app.service.ts",
-          "hash": "9967902337593410053",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/api/src/assets/.gitkeep",
+          "file": "apps/web/public/.gitkeep",
           "hash": "3244421341483603138"
         },
         {
-          "file": "apps/api/src/main.ts",
-          "hash": "14244403322143362372",
+          "file": "apps/web/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/web/src/app/api/hello/route.ts",
+          "hash": "495073956729887886"
+        },
+        {
+          "file": "apps/web/src/app/auth/callback/page.tsx",
+          "hash": "12724988535628843384",
           "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/core"
+            "npm:react",
+            "npm:next"
           ]
         },
         {
-          "file": "apps/api/tsconfig.app.json",
-          "hash": "1421362308817364721"
-        },
-        {
-          "file": "apps/api/tsconfig.json",
-          "hash": "6240538891403235665"
-        },
-        {
-          "file": "apps/api/webpack.config.js",
-          "hash": "1138914127741561495",
+          "file": "apps/web/src/app/entries/[id]/page.tsx",
+          "hash": "8493554980998498564",
           "deps": [
-            "npm:@nx/webpack"
+            "npm:react",
+            "npm:next",
+            "npm:react-markdown",
+            "npm:lucide-react",
+            [
+              "npm:@uiw/react-md-editor",
+              "dynamic"
+            ]
           ]
+        },
+        {
+          "file": "apps/web/src/app/entries/page.tsx",
+          "hash": "10044351769289249704",
+          "deps": [
+            "npm:next",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/global.css",
+          "hash": "9525528796496544948"
+        },
+        {
+          "file": "apps/web/src/app/layout.tsx",
+          "hash": "16030502831610108081",
+          "deps": [
+            "npm:next",
+            "npm:next-themes"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/page.tsx",
+          "hash": "6800888957950940041",
+          "deps": [
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/layout/AppLayout.tsx",
+          "hash": "16323058203225913930",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/layout/ChatPanel.tsx",
+          "hash": "7115711018760614555",
+          "deps": [
+            "npm:react",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/layout/Navbar.tsx",
+          "hash": "10237624912441492729",
+          "deps": [
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/layout/Sidebar.tsx",
+          "hash": "5476866898621907718",
+          "deps": [
+            "npm:next",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/layout/ThemeToggle.tsx",
+          "hash": "9663957054428894902",
+          "deps": [
+            "npm:next-themes",
+            "npm:react",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/ui/alert-dialog.tsx",
+          "hash": "4975458112160358777",
+          "deps": [
+            "npm:react",
+            "npm:@base-ui/react"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/ui/button.tsx",
+          "hash": "1154459874937648840",
+          "deps": [
+            "npm:@base-ui/react",
+            "npm:class-variance-authority"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/ui/sheet.tsx",
+          "hash": "14595442750308427462",
+          "deps": [
+            "npm:react",
+            "npm:@base-ui/react",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web/src/components/ui/skeleton.tsx",
+          "hash": "7143624361161375958"
+        },
+        {
+          "file": "apps/web/src/components/ui/tabs.tsx",
+          "hash": "6920513624223978939",
+          "deps": [
+            "npm:@base-ui/react",
+            "npm:class-variance-authority"
+          ]
+        },
+        {
+          "file": "apps/web/src/domains/auth/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/web/src/domains/chat/hooks/use-chat.ts",
+          "hash": "17946552773533623145",
+          "deps": [
+            "npm:react",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/web/src/domains/collections/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/web/src/domains/entries/hooks/use-entries.ts",
+          "hash": "4327980294359924366",
+          "deps": [
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/web/src/lib/api.ts",
+          "hash": "8101755659660616318"
+        },
+        {
+          "file": "apps/web/src/lib/query-client.ts",
+          "hash": "5445955516629315556",
+          "deps": [
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/web/src/lib/stores/layout-store.ts",
+          "hash": "14631815139607456287",
+          "deps": [
+            "npm:zustand"
+          ]
+        },
+        {
+          "file": "apps/web/src/lib/utils.ts",
+          "hash": "6483145186850064023",
+          "deps": [
+            "npm:clsx",
+            "npm:tailwind-merge"
+          ]
+        },
+        {
+          "file": "apps/web/src/middleware.ts",
+          "hash": "13951699275030233882",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/web/src/providers/query-provider.tsx",
+          "hash": "12662061267261042124",
+          "deps": [
+            "npm:@tanstack/react-query",
+            "npm:@tanstack/react-query-devtools"
+          ]
+        },
+        {
+          "file": "apps/web/tsconfig.json",
+          "hash": "10415785672776703502"
         }
       ],
-      "@mindlm/api-e2e": [
+      "@luminalm/web-e2e": [
+        {
+          "file": "apps/web-e2e/package.json",
+          "hash": "2975060533040955554"
+        },
+        {
+          "file": "apps/web-e2e/playwright.config.ts",
+          "hash": "9386259736192487633",
+          "deps": [
+            "npm:@playwright/test",
+            "npm:@nx/playwright",
+            "npm:@nx/devkit"
+          ]
+        },
+        {
+          "file": "apps/web-e2e/src/example.spec.ts",
+          "hash": "16019101014373124625",
+          "deps": [
+            "npm:@playwright/test"
+          ]
+        },
+        {
+          "file": "apps/web-e2e/tsconfig.json",
+          "hash": "12716116298556277593"
+        }
+      ],
+      "@luminalm/api-e2e": [
         {
           "file": "apps/api-e2e/.spec.swcrc",
           "hash": "18201067170784284381"
         },
         {
           "file": "apps/api-e2e/jest.config.cts",
-          "hash": "16229508411263369346"
+          "hash": "17691109728036334827"
         },
         {
           "file": "apps/api-e2e/package.json",
-          "hash": "2603976235148574479"
+          "hash": "586288549522846201"
         },
         {
           "file": "apps/api-e2e/src/api/api.spec.ts",
@@ -503,10 +747,380 @@
         },
         {
           "file": "apps/api-e2e/tsconfig.json",
-          "hash": "15369347320841676909"
+          "hash": "2994598626888719997"
+        }
+      ],
+      "@luminalm/api": [
+        {
+          "file": "apps/api/package.json",
+          "hash": "8343400227830421631",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@types/express@5.0.6",
+            "npm:@types/passport-google-oauth20",
+            "npm:@types/passport-jwt",
+            "npm:@types/pg",
+            "npm:ts-node",
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/core",
+            "npm:@nestjs/jwt",
+            "npm:@nestjs/passport",
+            "npm:@nestjs/platform-express",
+            "npm:@prisma/adapter-pg",
+            "npm:@prisma/client",
+            "npm:dotenv@17.4.2",
+            "npm:express@5.2.1",
+            "npm:passport",
+            "npm:passport-google-oauth20",
+            "npm:passport-jwt",
+            "npm:pg",
+            "npm:prisma",
+            "npm:reflect-metadata",
+            "npm:rxjs",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "apps/api/prisma/migrations/20260414221311_init/migration.sql",
+          "hash": "3345967946482610067"
+        },
+        {
+          "file": "apps/api/prisma/migrations/migration_lock.toml",
+          "hash": "872437952673290735"
+        },
+        {
+          "file": "apps/api/prisma/prisma.config.ts",
+          "hash": "862085864127795772",
+          "deps": [
+            "npm:dotenv@17.4.2",
+            "npm:prisma"
+          ]
+        },
+        {
+          "file": "apps/api/prisma/schema.prisma",
+          "hash": "17299303707508692954"
+        },
+        {
+          "file": "apps/api/prisma/seed.ts",
+          "hash": "5966187889579817587",
+          "deps": [
+            "npm:@prisma/client",
+            "npm:@prisma/adapter-pg",
+            "npm:pg"
+          ]
+        },
+        {
+          "file": "apps/api/src/app/app.controller.ts",
+          "hash": "15276891910009544695",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/app/app.module.ts",
+          "hash": "1808628988055098362",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/core"
+          ]
+        },
+        {
+          "file": "apps/api/src/app/app.service.ts",
+          "hash": "9967902337593410053",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/api/src/auth/auth.controller.ts",
+          "hash": "7654538201717517841",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport",
+            "npm:@nestjs/config",
+            "npm:express@5.2.1",
+            "npm:@prisma/client"
+          ]
+        },
+        {
+          "file": "apps/api/src/auth/auth.module.ts",
+          "hash": "12117406185453672899",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/jwt",
+            "npm:@nestjs/config",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/api/src/auth/auth.service.ts",
+          "hash": "14904910927178077143",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/jwt",
+            "npm:@prisma/client"
+          ]
+        },
+        {
+          "file": "apps/api/src/auth/decorators/public.decorator.ts",
+          "hash": "17960535925631508594",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/auth/decorators/roles.decorator.ts",
+          "hash": "17521106615036661738",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@prisma/client"
+          ]
+        },
+        {
+          "file": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+          "hash": "13293194670429433347",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/api/src/auth/guards/roles.guard.ts",
+          "hash": "6137329556891145988",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@prisma/client"
+          ]
+        },
+        {
+          "file": "apps/api/src/auth/strategies/google.strategy.ts",
+          "hash": "840030107834927158",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/passport",
+            "npm:passport-google-oauth20"
+          ]
+        },
+        {
+          "file": "apps/api/src/auth/strategies/jwt.strategy.ts",
+          "hash": "382690975212351791",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/passport",
+            "npm:passport-jwt"
+          ]
+        },
+        {
+          "file": "apps/api/src/chat/chat.controller.ts",
+          "hash": "2083793815316412581",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:express@5.2.1"
+          ]
+        },
+        {
+          "file": "apps/api/src/chat/chat.module.ts",
+          "hash": "17803955007153370274",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/chat/chat.service.ts",
+          "hash": "2483350160111589666",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@prisma/client"
+          ]
+        },
+        {
+          "file": "apps/api/src/collections/collections.controller.ts",
+          "hash": "10957333251550768317",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/collections/collections.module.ts",
+          "hash": "5336926454442832770",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/collections/collections.service.ts",
+          "hash": "17000232161646723543",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/common/common.module.ts",
+          "hash": "10377471127840016729",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/common/openrouter/embeddings.service.ts",
+          "hash": "343466131684273585",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/api/src/common/openrouter/interfaces/embedding.interface.ts",
+          "hash": "6105362758642348941"
+        },
+        {
+          "file": "apps/api/src/common/openrouter/interfaces/llm.interface.ts",
+          "hash": "16933448933961094358"
+        },
+        {
+          "file": "apps/api/src/common/openrouter/openrouter.service.ts",
+          "hash": "11884175343693058424",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/api/src/common/prompt/prompt.builder.ts",
+          "hash": "8401555240626740739"
+        },
+        {
+          "file": "apps/api/src/common/prompt/prompt.types.ts",
+          "hash": "5851666065851781222"
+        },
+        {
+          "file": "apps/api/src/conversations/conversations.controller.ts",
+          "hash": "11896450717424867217",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/conversations/conversations.module.ts",
+          "hash": "12490392311597285407",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/conversations/conversations.service.ts",
+          "hash": "16222900519293049659",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@prisma/client"
+          ]
+        },
+        {
+          "file": "apps/api/src/entries/dto/create-entry.dto.ts",
+          "hash": "16367159373103575663"
+        },
+        {
+          "file": "apps/api/src/entries/dto/entry-response.dto.ts",
+          "hash": "15158839651522242081"
+        },
+        {
+          "file": "apps/api/src/entries/dto/update-entry.dto.ts",
+          "hash": "5010772886183739219"
+        },
+        {
+          "file": "apps/api/src/entries/entries-chunking.service.ts",
+          "hash": "13696788432294212565",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/entries/entries.controller.ts",
+          "hash": "6846127957548155172",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/entries/entries.module.ts",
+          "hash": "17456192101172349975",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/entries/entries.service.ts",
+          "hash": "1006227569931019212",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/main.ts",
+          "hash": "10007994724197693562",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core"
+          ]
+        },
+        {
+          "file": "apps/api/src/prisma/prisma.module.ts",
+          "hash": "10238961258611182846",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/prisma/prisma.service.ts",
+          "hash": "11360908912380376547",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@prisma/client",
+            "npm:@prisma/adapter-pg",
+            "npm:pg"
+          ]
+        },
+        {
+          "file": "apps/api/src/search/search.module.ts",
+          "hash": "14390709970096521373",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/src/search/search.service.ts",
+          "hash": "6971342196258240274",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api/tsconfig.app.json",
+          "hash": "1421362308817364721"
+        },
+        {
+          "file": "apps/api/tsconfig.json",
+          "hash": "6240538891403235665"
+        },
+        {
+          "file": "apps/api/webpack.config.js",
+          "hash": "1138914127741561495",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
         }
       ]
     }
   },
-  "externalNodesHash": "3267511051465293170"
+  "externalNodesHash": "995282710395334833"
 }

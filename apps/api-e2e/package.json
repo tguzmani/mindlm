@@ -1,10 +1,10 @@
 {
-  "name": "@mindlm/api-e2e",
+  "name": "@luminalm/api-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@mindlm/api"
+      "@luminalm/api"
     ],
     "targets": {
       "e2e": {
@@ -17,8 +17,8 @@
           "passWithNoTests": true
         },
         "dependsOn": [
-          "@mindlm/api:build",
-          "@mindlm/api:serve"
+          "@luminalm/api:build",
+          "@luminalm/api:serve"
         ]
       }
     }

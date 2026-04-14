@@ -1,10 +1,10 @@
 {
-  "name": "@mindlm/web-e2e",
+  "name": "@luminalm/web-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@mindlm/web"
+      "@luminalm/web"
     ]
   }
 }
